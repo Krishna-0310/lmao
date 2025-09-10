@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Aradhya 😋</title>
+  <style>
+    body {
+      background-color: black;
+      color: #39ff14; /* BRIGHT neon green */
+      font-family: "Courier New", monospace;
+      font-size: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+
+    h1 {
+      color: #ff073a; /* neon red */
+      text-shadow: 
+        0 0 5px #ff073a,
+        0 0 15px #ff073a,
+        0 0 30px #ff073a,
+        0 0 60px #ff073a;
+      font-size: 2.8rem;
+      margin-bottom: 30px;
+    }
+
+    #message {
+      white-space: pre-wrap;
+      text-shadow: 
+        0 0 5px #39ff14,
+        0 0 15px #39ff14,
+        0 0 30px #39ff14,
+        0 0 60px #39ff14;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 12px;
+      background-color: #39ff14;
+      animation: blink 0.6s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>For Aradhya 😋</h1>
+  <div id="message"></div><span class="cursor"></span>
+
+  <script>
+    const text = "I'll be offline from 12:00 pm to 7:30 today\n" +
+                 "Take care and study well! 😊\n" +
+                 "And don't forget you're mine! 🗿";
+    let i = 0;
+
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("message").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 100);
+      }
+    }
+
+    window.addEventListener("load", () => {
+      setTimeout(typeWriter, 500);
+    });
+  </script>
+</body>
+</html>
+
